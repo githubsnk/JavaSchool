@@ -8,7 +8,7 @@ public class EvenOddNumbers {
     public static void main (String[]args){ 
         Scanner Scn = new Scanner(System.in);
         int Num=0,Even=0, Odd=0;
-        String Output="";
+        String Quit="";
 
         do{
             for (int i=1; i<=20;i++){
@@ -29,5 +29,6 @@ public class EvenOddNumbers {
             Quit= Scn.next().toLowerCase();            
             System.out.println("-------------------------------------------------------------------");           
         }   while (!(Quit.equals("q")));  
+        Scn.close();
     }
 }
