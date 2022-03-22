@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class ArrAscii {
     public static void main(String[] args) {
         Scanner scn= new Scanner(System.in);        
-        int carattere[]={1,0,3,5,2,4,7,6}, ascii[]={49,48,51,53,50,52,55,54}, scelta=0, charcode=0;        
+        int  ascii[]={49,48,51,53,50,52,55,54}, scelta=0, charcode=0;        
+        char carattere[]={'1','0','3','5','2','4','7','6'};
         
         // domando se si vuole codificare o decodificare
         System.out.println ("Per decodificare digita 1 per codificare digita 2");
@@ -18,6 +19,7 @@ public class ArrAscii {
             for (int i=0;i<ascii.length;i++){
                 if (charcode==ascii[i]){                    
                     System.out.println("il carattere corrispondente di "+charcode+ " è "+carattere[i]);
+                    break;
                 }
             }
         }
@@ -29,6 +31,7 @@ public class ArrAscii {
             for (int i=0;i<carattere.length;i++){
                 if (charcode==carattere[i]){                    
                     System.out.println("il codice ascii corrispondente di " +charcode+" è "+ascii[i]);
+                    break;
                 }
             }
         }

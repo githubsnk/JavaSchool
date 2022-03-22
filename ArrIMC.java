@@ -1,6 +1,6 @@
 package JavaSchool;
 import java.util.*;
-import java.math.*;
+
 /*
 Gestire in input due array paralleli in cui inserire (se volete semplificarvi il tutto inserite direttamente
  peso e altezza in fase di dichiarazione degli array)
@@ -24,10 +24,11 @@ public class ArrIMC {
     Scanner scn = new Scanner(System.in);
     int i=0, persone=0;
     
-    System.out.println("di quante perosne vuoi calcolare l' IMC?");
+    System.out.println("di quante persone vuoi calcolare l' IMC?");
     persone= scn.nextInt();
     double peso[]= new double [persone], altezza[]= new double[persone], imc[]= new double[persone];
     String nome[]= new String [persone], imcstr="";
+    
     
         while (i<persone){
             System.out.println("Inserisci il tuo nome, peso(Kg) e l'altezza(mt) separati dal tasto invio");
@@ -54,7 +55,7 @@ public class ArrIMC {
         
             System.out.println("l' IMC di "+nome[j]+" è "+imcstr);
         }
-
+    scn.close();
     }
     
 }
