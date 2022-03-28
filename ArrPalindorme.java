@@ -7,10 +7,12 @@ import java.util.Scanner;
  */
 public class ArrPalindorme {
     public static void main(String[] args) {
-        Scanner scn= new Scanner(System.in);
+        Scanner scn = new Scanner(System.in);
+        
         int j=0;
         char palindroma[]={'a','n','n','a'}, palindromacontr[]=new char[palindroma.length]; // 7 elementi
         String output="";
+            
         
             for (int i=palindroma.length-1;i>=0;i--){
                 palindromacontr[j]=palindroma[i];
