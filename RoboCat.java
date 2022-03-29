@@ -17,51 +17,52 @@ Mosse anche in diagonale (NW, NE, SW, SE)
 public class RoboCat {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
-        String matrice[][]= new String [10][10];
-        int whilecounter=0, tc=0, tr=0, gc=0, gr=0,gctemp=0,grtemp=0; boolean stopwhile=true;
+        String matrice[][]= new String [11][11]; // 11 elementi per avere il 10mo elemento compreso
+        int tc=0, tr=0, gc=0, gr=0,gctemp=0,grtemp=0; boolean stopwhile=true;
 
-
-        System.out.println("dove si vuole posizionare il topo?");
-        // usare le variabili tc=0, tr=0, gc=0, gr=0; al posto dell'indice
-
-         gc=2; gr=3; tc=5; tr=9; 
+        // richiedo le coordinate
+        System.out.println("digita colonna gatto (0-10)");
+        gctemp=gc=scn.nextInt();
+        System.out.println("digita riga gatto (0-10)");
+        grtemp=gr=scn.nextInt();
+        System.out.println("digita colonna topo (0-10)");
+        tc=scn.nextInt();
+        System.out.println("digita riga topo (0-10)");
+        tr=scn.nextInt();
         
-        matrice[tc][tr]="T";
-        matrice[gc][gr]="G";
+        // assegno le coordinate del gatto e del topo all'interno della matrice
+        matrice[tc][tr]="T"; matrice[gc][gr]="G";       
 
-        while (stopwhile){ 
-            whilecounter++; 
-                        
-            if (whilecounter>1){
+        // faccio scorrere l'array con ordine ascendente
+        while (stopwhile){
+            if (tc>5&&gc>5&&tc>gc){ // ottimizzazione per decidere se la ricerca del topo deve essere in ordine ascendente o discendente
+                System.out.println("Ordine ascendente");
                 grtemp++;
-                if (grtemp==10){
-                    grtemp=0;
-                    gctemp=gc+1;
-                    if (gctemp==10){
-                        gctemp=0;                    
+                if (grtemp==11){ // se raggiungo l'ultima riga
+                grtemp=0; // riporto alla prima riga
+                gctemp++; // passo alla colonna succesiva
+                    if (gctemp==11){ // se raggiungo l'ultima colonna
+                        gctemp=0;   // passo alla prima colonna               
                     }
-                }
+                }    
             }
-            else{
-                grtemp=gr+1;
-                if (grtemp==10){
-                    grtemp=0;
-                    gctemp=gc+1;
-                    if (gctemp==10){
-                        gctemp=0;                    
+            else if (tc<5&&gc<5&&tc<gc){
+            System.out.println("Ordine discendente");
+            grtemp--;
+                if (grtemp==0){ // se raggiungo la prima riga
+                grtemp=11; // riporto alla ultima riga
+                gctemp--; // passo alla colonna precedente
+                    if (gctemp==0){ // se raggiungo la prima colonna
+                        gctemp=10;  // passo all'ultima colonna      
                     }
-                }
-
+                }        
             }
-            
-           
-
+                 
             if (matrice[gctemp][grtemp]=="T"){
-                System.out.println("Topo radioattivo catturato");
+                System.out.println("--------------------------------------------------------------");
+                System.out.println("robocat ha catturato il topo in posizione ("+gctemp+";"+grtemp+")");
                 stopwhile=false;
             }
-        }    
-
+        } 
     }
-    
 }
