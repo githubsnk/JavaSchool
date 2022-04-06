@@ -61,8 +61,7 @@ public class RoboCat {
             } 
         }
 
-        if (rg>rt){
-            
+        if (rg>rt){            
             for (int j=rg;j>rt;j--){// da riga gatto a riga topo           
                     matrice[cg][j-1]=".";// colonna ferma, riga diminuisce          
             }
