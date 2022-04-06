@@ -18,7 +18,7 @@ public class RoboCat {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         String matrice[][]= new String [11][11]; // 11 elementi per avere il 10mo elemento compreso
-        int i=0, tc=0, tr=0, gc=0, gr=0,gctemp=0,grtemp=0; boolean stopwhile=true;
+        int tc=0, tr=0, gc=0, gr=0,gctemp=0,grtemp=0; boolean stopwhile=true;
 
         //#region richiedo le coordinate        
         System.out.println("digita colonna gatto (0-10)");
