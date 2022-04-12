@@ -13,47 +13,36 @@ Mosse anche in diagonale (NW, NE, SW, SE)
 Appunti: //se rg>rt y=rg-(rg-rt); //se cg>ct allora x=cg-(cg-ct); //se rg<rt allora y=rg+(rt-rg); //se cg<ct allora x=cg+(ct-cg);
 */
 public class RoboCat {
+static int  ct=0, rt=0, cg=0, rg=0; static String matrice[][]= new String [10][10];
+   
 
-    public static String[][] inizializzamatrice() {
-        String matrice[][]= new String [10][10];
+    public static void inizializzamatrice() {
         for (int i=0;i<matrice.length;i++){
             for (int j=0;j<matrice.length;j++){
                 matrice[i][j] = "*";
             }
-        }
-        return matrice;
+        }       
     }
 
     public static void chiedicoordinate() {
-                
+        try (Scanner scn = new Scanner(System.in)) {
+            System.out.println("digita colonna gatto (0-9)");
+            cg=scn.nextInt();
+            System.out.println("digita riga gatto (0-9)");
+            rg=scn.nextInt();
+            System.out.println("digita colonna topo (0-9)");
+            ct=scn.nextInt();
+            System.out.println("digita riga topo (0-9)");
+            rt=scn.nextInt();
+        }    
     }
 
-    public static void main(String[] args) {
-        
-        int ct=0, rt=0, cg=0, rg=0;
-
-        //#region richiedo le coordinate
-        Scanner scn = new Scanner(System.in);        
-        System.out.println("digita colonna gatto (0-9)");
-        cg=scn.nextInt();
-        System.out.println("digita riga gatto (0-9)");
-        rg=scn.nextInt();
-        System.out.println("digita colonna topo (0-9)");
-        ct=scn.nextInt();
-        System.out.println("digita riga topo (0-9)");
-        rt=scn.nextInt();            
-        //#endregion
-
-        //#region inserisco nella matrice gli asterischi per i campi vuoti
-        String matrice[][]=inizializzamatrice();       
-        //#endregion
-        
-        //#region inserisco il gatto e il topo nelle coordinate scelte
+    public static void assegnacoordinate() {
         matrice[cg][rg]="G";
-        matrice[ct][rt]="T";
-        //#endregion
-
-        //#region selezioni per segnalare a video il percorso fatto dal gatto per raggiungere il topo           
+        matrice[ct][rt]="T";        
+    }
+    
+    public static void strategiapercorso() {
         if (cg<ct){ // colonna gatto minore di colonna topo            
             for (int j=ct;j>cg;j--){// da colonna topo a colonna gatto andando indietro  
                 matrice[j-1][rt]=".";// colonna diminuisce e riga ferma       
@@ -83,9 +72,10 @@ public class RoboCat {
         if (rg==rt){       
         matrice[cg][rg]="X";        
         }
-        //#endregion
         
-        //#region mostro l'array a video con gli spostamenti
+    }
+    
+    public static void outputspostamenti() {
         System.out.print(" "+matrice[0][0]); System.out.print(" "+matrice[1][0]); System.out.print(" "+matrice[2][0]); System.out.print(" "+matrice[3][0]); System.out.print(" "+matrice[4][0]); System.out.print(" "+matrice[5][0]); System.out.print(" "+matrice[6][0]); System.out.print(" "+matrice[7][0]);System.out.print(" "+matrice[8][0]); System.out.print(" "+matrice[9][0]);
         System.out.println();
         System.out.print(" "+matrice[0][1]); System.out.print(" "+matrice[1][1]); System.out.print(" "+matrice[2][1]); System.out.print(" "+matrice[3][1]); System.out.print(" "+matrice[4][1]); System.out.print(" "+matrice[5][1]); System.out.print(" "+matrice[6][1]); System.out.print(" "+matrice[7][1]);System.out.print(" "+matrice[8][1]); System.out.print(" "+matrice[9][1]);
@@ -105,9 +95,29 @@ public class RoboCat {
         System.out.print(" "+matrice[0][8]); System.out.print(" "+matrice[1][8]); System.out.print(" "+matrice[2][8]); System.out.print(" "+matrice[3][8]); System.out.print(" "+matrice[4][8]); System.out.print(" "+matrice[5][8]); System.out.print(" "+matrice[6][8]); System.out.print(" "+matrice[7][8]);System.out.print(" "+matrice[8][8]); System.out.print(" "+matrice[9][8]);
         System.out.println();
         System.out.print(" "+matrice[0][9]); System.out.print(" "+matrice[1][9]); System.out.print(" "+matrice[2][9]); System.out.print(" "+matrice[3][9]); System.out.print(" "+matrice[4][9]); System.out.print(" "+matrice[5][9]); System.out.print(" "+matrice[6][9]); System.out.print(" "+matrice[7][9]);System.out.print(" "+matrice[8][9]); System.out.print(" "+matrice[9][9]);
-        System.out.println();
+        System.out.println();        
+    }
+
+    public static void main(String[] args) {      
+
+        //#region richiedo le coordinate
+        chiedicoordinate();
+        //#endregion
+
+        //#region inserisco nella matrice gli asterischi per i campi vuoti
+        inizializzamatrice();       
         //#endregion
         
-    scn.close();
+        //#region inserisco il gatto e il topo nelle coordinate scelte
+        assegnacoordinate();
+        //#endregion
+
+        //#region selezioni per segnalare a video il percorso fatto dal gatto per raggiungere il topo           
+        strategiapercorso();
+        //#endregion
+        
+        //#region mostro l'array a video con gli spostamenti
+        outputspostamenti();
+        //#endregion     
     }    
 }
