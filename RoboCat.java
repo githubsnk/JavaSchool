@@ -1,5 +1,9 @@
 package JavaSchool;
 import java.util.*;
+
+import javax.lang.model.type.ArrayType;
+
+
 /*
 Terreno: matrice n x m, bordi "solidi".
 Un solo topo a (5, 9). Topo immobile. Nessun ostacolo.
@@ -14,11 +18,12 @@ Appunti: //se rg>rt y=rg-(rg-rt); //se cg>ct allora x=cg-(cg-ct); //se rg<rt all
 */
 public class RoboCat {
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
+        
         String matrice[][]= new String [10][10];
         int ct=0, rt=0, cg=0, rg=0;
 
-        //#region richiedo le coordinate        
+        //#region richiedo le coordinate
+        Scanner scn = new Scanner(System.in);        
         System.out.println("digita colonna gatto (0-9)");
         cg=scn.nextInt();
         System.out.println("digita riga gatto (0-9)");
@@ -26,15 +31,16 @@ public class RoboCat {
         System.out.println("digita colonna topo (0-9)");
         ct=scn.nextInt();
         System.out.println("digita riga topo (0-9)");
-        rt=scn.nextInt();
+        rt=scn.nextInt();            
         //#endregion
 
         //#region inserisco nella matrice gli asterischi per i campi vuoti
-        for (int j=0;j<matrice.length;j++){
-            for (int i=0;i<matrice.length;i++){
-                matrice[i][j]="*";
-            }
-        }
+        Robocat.inserisciasterisco(matrice[][]);
+        // for (int j=0;j<matrice.length;j++){
+        //     for (int i=0;i<matrice.length;i++){
+        //         matrice[i][j]="*";
+        //     }
+        // }
         //#endregion
         
         //#region inserisco il gatto e il topo nelle coordinate scelte
@@ -99,4 +105,17 @@ public class RoboCat {
         
     scn.close();
     }    
+}
+
+class Robocat{
+
+    public static String inserisciasterisco (ArrayType matrice[][]) {
+        for (int j=0;j<matrice.length;j++){
+            for (int i=0;i<matrice.length;i++){
+                return  matrice[i][j]="*";
+            }
+        }
+        
+    }
+    
 }
