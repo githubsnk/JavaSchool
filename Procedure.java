@@ -68,6 +68,10 @@ class MiaLibr { //notare: e' una classe differente - potrebbe essere in un file 
             return(scanner.nextInt());
         
 	}
+
+	public static int dammiNumero() {
+		return 0;
+	}
     
 }
 
