@@ -76,26 +76,12 @@ static int  ct=0, rt=0, cg=0, rg=0; static String matrice[][]= new String [10][1
     }
     
     public static void outputspostamenti() {
-        System.out.print(" "+matrice[0][0]); System.out.print(" "+matrice[1][0]); System.out.print(" "+matrice[2][0]); System.out.print(" "+matrice[3][0]); System.out.print(" "+matrice[4][0]); System.out.print(" "+matrice[5][0]); System.out.print(" "+matrice[6][0]); System.out.print(" "+matrice[7][0]);System.out.print(" "+matrice[8][0]); System.out.print(" "+matrice[9][0]);
-        System.out.println();
-        System.out.print(" "+matrice[0][1]); System.out.print(" "+matrice[1][1]); System.out.print(" "+matrice[2][1]); System.out.print(" "+matrice[3][1]); System.out.print(" "+matrice[4][1]); System.out.print(" "+matrice[5][1]); System.out.print(" "+matrice[6][1]); System.out.print(" "+matrice[7][1]);System.out.print(" "+matrice[8][1]); System.out.print(" "+matrice[9][1]);
-        System.out.println();
-        System.out.print(" "+matrice[0][2]); System.out.print(" "+matrice[1][2]); System.out.print(" "+matrice[2][2]); System.out.print(" "+matrice[3][2]); System.out.print(" "+matrice[4][2]); System.out.print(" "+matrice[5][2]); System.out.print(" "+matrice[6][2]); System.out.print(" "+matrice[7][2]);System.out.print(" "+matrice[8][2]); System.out.print(" "+matrice[9][2]);
-        System.out.println();
-        System.out.print(" "+matrice[0][3]); System.out.print(" "+matrice[1][3]); System.out.print(" "+matrice[2][3]); System.out.print(" "+matrice[3][3]); System.out.print(" "+matrice[4][3]); System.out.print(" "+matrice[5][3]); System.out.print(" "+matrice[6][3]); System.out.print(" "+matrice[7][3]);System.out.print(" "+matrice[8][3]); System.out.print(" "+matrice[9][3]);
-        System.out.println();
-        System.out.print(" "+matrice[0][4]); System.out.print(" "+matrice[1][4]); System.out.print(" "+matrice[2][4]); System.out.print(" "+matrice[3][4]); System.out.print(" "+matrice[4][4]); System.out.print(" "+matrice[5][4]); System.out.print(" "+matrice[6][4]); System.out.print(" "+matrice[7][4]);System.out.print(" "+matrice[8][4]); System.out.print(" "+matrice[9][4]);
-        System.out.println();
-        System.out.print(" "+matrice[0][5]); System.out.print(" "+matrice[1][5]); System.out.print(" "+matrice[2][5]); System.out.print(" "+matrice[3][5]); System.out.print(" "+matrice[4][5]); System.out.print(" "+matrice[5][5]); System.out.print(" "+matrice[6][5]); System.out.print(" "+matrice[7][5]);System.out.print(" "+matrice[8][5]); System.out.print(" "+matrice[9][5]);
-        System.out.println();
-        System.out.print(" "+matrice[0][6]); System.out.print(" "+matrice[1][6]); System.out.print(" "+matrice[2][6]); System.out.print(" "+matrice[3][6]); System.out.print(" "+matrice[4][6]); System.out.print(" "+matrice[5][6]); System.out.print(" "+matrice[6][6]); System.out.print(" "+matrice[7][6]);System.out.print(" "+matrice[8][6]); System.out.print(" "+matrice[9][6]);
-        System.out.println();
-        System.out.print(" "+matrice[0][7]); System.out.print(" "+matrice[1][7]); System.out.print(" "+matrice[2][7]); System.out.print(" "+matrice[3][7]); System.out.print(" "+matrice[4][7]); System.out.print(" "+matrice[5][7]); System.out.print(" "+matrice[6][7]); System.out.print(" "+matrice[7][7]);System.out.print(" "+matrice[8][7]); System.out.print(" "+matrice[9][7]);
-        System.out.println();
-        System.out.print(" "+matrice[0][8]); System.out.print(" "+matrice[1][8]); System.out.print(" "+matrice[2][8]); System.out.print(" "+matrice[3][8]); System.out.print(" "+matrice[4][8]); System.out.print(" "+matrice[5][8]); System.out.print(" "+matrice[6][8]); System.out.print(" "+matrice[7][8]);System.out.print(" "+matrice[8][8]); System.out.print(" "+matrice[9][8]);
-        System.out.println();
-        System.out.print(" "+matrice[0][9]); System.out.print(" "+matrice[1][9]); System.out.print(" "+matrice[2][9]); System.out.print(" "+matrice[3][9]); System.out.print(" "+matrice[4][9]); System.out.print(" "+matrice[5][9]); System.out.print(" "+matrice[6][9]); System.out.print(" "+matrice[7][9]);System.out.print(" "+matrice[8][9]); System.out.print(" "+matrice[9][9]);
-        System.out.println();        
+       for (int i=0;i<matrice.length;i++){
+           for (int j=0;j<matrice.length;j++){
+            System.out.print(matrice[j][i]+" ");            
+           }
+           System.out.println(" ");
+       }
     }
 
     public static void main(String[] args) {      

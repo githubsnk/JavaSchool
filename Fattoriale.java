@@ -23,6 +23,3 @@ public class Fattoriale {
             System.out.println("il fattoriale di "+n+" è: "+output);
         }
 }
-
-
-
