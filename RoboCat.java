@@ -74,6 +74,67 @@ static int  ct=0, rt=0, cg=0, rg=0; static String matrice[][]= new String [10][1
         }
         
     }
+
+    public static void strategiapercorsonew() { // 4
+        if (cg<ct){ // colonna gatto minore di colonna topo    
+            int rtt=rt;           
+            for (int j=ct;j>cg;j--){// da colonna topo a colonna gatto andando indietro                  
+                if (rg<rt){                   
+                    rtt=rtt-1;
+                    if (rtt==rg){
+                        break;
+                    }
+                    matrice[j-1][rtt]=".";
+                }  
+                else{                    
+                    rtt=rtt+1;
+                    if (rtt==rg){
+                        break;
+                    }
+                    matrice[j-1][rtt]=".";// colonna diminuisce e riga ferma     
+                }
+            }
+        }
+
+        if (cg>ct){     
+            int ctt=ct;    
+            int rgt=rg;   
+            for (int j=rt;j>rg;j--){// da colonna gatto a colonna topo 
+                if (rg<rt){
+                    
+                    ctt=ctt+1;
+                    if(ctt==cg){
+                        break;
+                    }
+                    matrice[ctt][j-1]=".";
+                    outputspostamenti();
+                }
+                else { // riga gatto > riga topo
+                    rgt=rgt+1;
+                    matrice[rgt-1][rgt-1]=".";//colonna diminuisce, riga ferma  
+                }        
+                     
+            } 
+        }
+
+            // if (rg<rt){            
+            //     for (int j=rt;j>rg;j--){// da riga topo a riga gatto         
+            //         matrice[cg][j]=".";// colonna ferma riga diminuisce      
+            //     }                   
+            // }
+    
+            
+    
+            // if (rg>rt){            
+            //     for (int j=rg;j>rt;j--){// da riga gatto a riga topo           
+            //             matrice[cg][j-1]=".";// colonna ferma, riga diminuisce          
+            //     }
+            // }
+            if (cg==ct&&rg==rt){        
+            matrice[cg][rg]="X";         
+            }
+    }
+    
     
     public static void outputspostamenti() {
        for (int i=0;i<matrice.length;i++){
@@ -82,10 +143,10 @@ static int  ct=0, rt=0, cg=0, rg=0; static String matrice[][]= new String [10][1
            }
            System.out.println(" ");
        }
+       System.out.println("----------");
     }
 
-    public static void main(String[] args) {      
-
+    public static void main(String[] args) {
         //#region richiedo le coordinate
         chiedicoordinate();
         //#endregion
@@ -99,7 +160,7 @@ static int  ct=0, rt=0, cg=0, rg=0; static String matrice[][]= new String [10][1
         //#endregion
 
         //#region selezioni per segnalare a video il percorso fatto dal gatto per raggiungere il topo           
-        strategiapercorso();
+        strategiapercorsonew();
         //#endregion
         
         //#region mostro l'array a video con gli spostamenti
