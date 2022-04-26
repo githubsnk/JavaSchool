@@ -134,8 +134,7 @@ static int  ct=0, rt=0, cg=0, rg=0; static String matrice[][]= new String [10][1
             matrice[cg][rg]="X";         
             }
     }
-    
-    
+        
     public static void outputspostamenti() {
        for (int i=0;i<matrice.length;i++){
            for (int j=0;j<matrice.length;j++){
@@ -145,7 +144,6 @@ static int  ct=0, rt=0, cg=0, rg=0; static String matrice[][]= new String [10][1
        }
        System.out.println("----------");
     }
-
     public static void main(String[] args) {
         //#region richiedo le coordinate
         chiedicoordinate();
