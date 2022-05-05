@@ -8,11 +8,12 @@ public class Condensatore {
         */   
 static String[][] matrice= new String[30][30];
     public static void outputspostamenti() {
+        System.out.println("0||||1||||2||||3||||4||||5");
         for (int i=0;i<matrice.length;i++){//colonna
             for (int j=0;j<matrice.length;j++){//riga
              System.out.print(matrice[i][j]+" ");            
             }
-            System.out.println(" ");
+            System.out.println("");
         }
         System.out.println("------------------------------");
      }
@@ -38,6 +39,7 @@ static String[][] matrice= new String[30][30];
         v[0]=0;
     
         System.out.println("tempo= "+(0.00)+"s delta q: "+deltaQ[0]+", q: "+q[0]+", v: "+v[0]+", i: "+i[0]);// stampo subito i primi elementi perchè l'indice del for successivo parte da 1
+        matrice[0][0]="|";
         for  (int j=1;j<q.length;j++){          
             q[j]=q[j-1]+deltaQ[j-1];// calcola la carica  
             volt=v[j]=q[j]/c; // calcolo la tensione

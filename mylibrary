@@ -1,0 +1,25 @@
+public static String ParioDispari() {        
+       
+        int pari=0, dispari=0; String esito=" ";  
+        
+        System.out.println("quanti numeri vuoi inserire");     
+        int matrice[] = new int [scn.nextInt()];
+        System.out.println("Inserire i numeri/o:");
+    
+        for (int i=0;i<matrice.length;i++){
+            matrice[i]= scn.nextInt();
+            if (matrice[i]%2==0){
+                pari++;
+            }
+            else {
+                dispari++;
+            }            
+        }
+        if (pari==matrice.length){
+            esito="pari";
+        }
+        else if (dispari==matrice.length) {            
+            esito="dispari";
+        }        
+        return esito;        
+    }
