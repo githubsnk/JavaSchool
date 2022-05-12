@@ -61,16 +61,7 @@ public class mylib {
         }
         return mediaimc=mediaimc/qtaiterazioni;
     }
-
-    public static int richiediQuantità(String messaggio) {
-        Scanner scn = new Scanner(System.in);
-        int qtà=0;
-        
-        System.out.print(messaggio); qtà=scn.nextInt();
-        return qtà;
-        
-    }
-   
+    
     public static void outputImc(int qtàpersone,String cognome[],double imc[], double peso[], double altezza[],
     String[] outputimc,double mediaimc,int superiori, int inferiori) {
         DecimalFormat decpeso= new DecimalFormat("#0.0");// serve a stabilire quanti decimali utilizzare
@@ -91,4 +82,43 @@ public class mylib {
         
     }
 
-}
+    public static boolean numeroPrimo(int n) {        
+        boolean primo=true; int i=2;
+        do {            
+            if (n%i==0&&n>3||n<2){//divide n con l'indice che parte da 2 fino a n/2,e se è divisibile fa. oppure se n<2 fa.
+                primo=false;      // non è un numero primo                     
+            }
+            else if (i>(n/2)) { //altrimenti se non è divisibile e l'indice è maggiore di n/2 fa.                    
+                    primo=false;
+                    return primo=true;// è un numero primo                    
+                } 
+            i++;         
+        } while (primo);
+        return primo;              
+    }
+
+    public static int dammiInt(String messaggio) {
+        Scanner scn= new Scanner(System.in);
+        System.out.print(messaggio);
+        int n=scn.nextInt();
+        return n;
+        
+    }
+
+    public static long dammiLong(String messaggio) {
+        Scanner scn= new Scanner(System.in);
+        System.out.print(messaggio);
+        long n=scn.nextInt();
+        return n;
+        
+    }
+
+    public static long fattoriale(long n) {
+        long temp=1;
+        for (long i=n;i>0;i--){
+            temp=temp*i;
+        }
+        return temp;
+    }
+
+}// fine Classe

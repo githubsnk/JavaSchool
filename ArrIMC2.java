@@ -21,7 +21,7 @@ due decimali.
 public class ArrIMC2 {    
     public static void main(String[] args) {        
         //chiedo quante persone si vuole inserire
-        int qtàpersone=mylib.richiediQuantità("Di quante quante persone vuoi calcolare l'IMC?: ");
+        int qtàpersone=mylib.dammiInt("Di quante quante persone vuoi calcolare l'IMC?: ");
 
         String cognome[]=new String [qtàpersone], outputimc[]=new String[qtàpersone]; int superiori=0, inferiori=0;
         double peso[]=new double [qtàpersone], altezza[]=new double [qtàpersone], imc[]=new double [qtàpersone];
