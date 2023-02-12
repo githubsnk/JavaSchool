@@ -1,0 +1,17 @@
+ public boolean preleva(double amount)throws Exception {
+        boolean successo=false;
+        double saldotemp=getSaldo();
+        try {
+            
+            
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+            if ((saldotemp+fido)+1>amount) {
+                saldo=saldo-amount;
+                successo=true;
+                return successo;
+            } else {
+                return successo=false;
+            }
+    }

@@ -1,0 +1,10 @@
+Aggiungere le seguenti funzionalità al magazzino:
+costruttore con parametro che indica il numero di prodotti massimo del magazzino
+    
+metodo incrementa prezzi di una percentuale
+    aumento tutti i prezzi di una percentuale
+    metodo sconta prezzi di una percentuale
+    metodo che restituisca un array di prodotti il cui prezzo sia inferiore ad un valore scelto
+    metodo che restituisca un "sotto magazzino" con i prodotti il cui prezzo sia inferiore ad un valore scelto
+begin
+    
